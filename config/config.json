@@ -1,0 +1,25 @@
+
+
+{
+  "development": {
+    "username": "${DB_USERNAME || 'root'}",
+    "password": "${DB_PASSWORD || null}",
+    "database": "${DB_DATABASE || 'database_development'}",
+    "host": "${DB_HOST || '127.0.0.1'}",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "${DB_USERNAME || 'root'}",
+    "password": "${DB_PASSWORD || null}",
+    "database": "${DB_DATABASE || 'database_test'}",
+    "host": "${DB_HOST || '127.0.0.1'}",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "${DB_USERNAME || 'root'}",
+    "password": "${DB_PASSWORD || null}",
+    "database": "${DB_DATABASE || 'database_production'}",
+    "host": "${DB_HOST || '127.0.0.1'}",
+    "dialect": "mysql"
+  }
+}
