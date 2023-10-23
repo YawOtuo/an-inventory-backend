@@ -7,18 +7,23 @@
     "test": "nodemon --exec 'mocha' 'tests/**/*.js' --watch 'controllers/**/*.js'",
     "start": "nodemon -r dotenv/config index.js",
     "migrations:generate": "sequelize-mig migration:make -n ",
-    "migrations:run": "npx sequelize-cli db:migrate"
+    "migrations:run": "npx sequelize-cli db:migrate",
+    "swagger-autogen": "node swagger.js"
   },
   "author": "YawOtuo",
   "license": "ISC",
   "dependencies": {
+    "and": "^0.0.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mysql2": "^3.6.1",
     "nodemon": "^3.0.1",
     "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.1",
-    "sequelize-mig": "^3.1.3"
+    "sequelize-mig": "^3.1.3",
+    "swagger-autogen": "^2.23.6",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "chai": "^4.3.10",

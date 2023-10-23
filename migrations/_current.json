@@ -1,5 +1,51 @@
 {
     "tables": {
+        "Inventories": {
+            "tableName": "Inventories",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "action": {
+                    "field": "action",
+                    "seqType": "Sequelize.STRING"
+                },
+                "price": {
+                    "field": "price",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "quantity": {
+                    "field": "quantity",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "itemId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Items",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "field": "itemId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
         "Items": {
             "tableName": "Items",
             "schema": {
@@ -22,6 +68,11 @@
                     "field": "description",
                     "seqType": "Sequelize.STRING"
                 },
+                "variants": {
+                    "allowNull": true,
+                    "field": "variants",
+                    "seqType": "Sequelize.JSON"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -39,5 +90,5 @@
     "path": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current.json",
     "backupPath": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current_bak.json",
     "exists": true,
-    "revision": 4
+    "revision": 5
 }

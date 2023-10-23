@@ -1,13 +1,25 @@
 const express = require('express')
 const app = express()
 const models = require('./models')
-const itemRoutes = require('./routes/item.routes')
+const itemRoutes = require('./item/item.routes');
+const inventoryRoutes = require('./inventory/routes');
+
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
+
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
+
 
 require('dotenv').config();
 
 app.use(express.json({ extended: false }))
 
 app.use('/items', itemRoutes)
+
+app.use('/inventory', inventoryRoutes)
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })

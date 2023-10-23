@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING,
     quantity: DataTypes.STRING,
     description: DataTypes.STRING,
+    variants: {
+      type: DataTypes.JSON, // Define the "variants" attribute as JSON
+      allowNull: true, // Set to true if variants can be null, otherwise false
+    },
+
 
   },
    {

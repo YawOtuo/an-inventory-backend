@@ -18,6 +18,10 @@
                     "field": "quantity",
                     "seqType": "Sequelize.STRING"
                 },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.STRING"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -35,5 +39,5 @@
     "path": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current.json",
     "backupPath": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current_bak.json",
     "exists": true,
-    "revision": 3
+    "revision": 4
 }
