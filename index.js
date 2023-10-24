@@ -10,7 +10,23 @@ const swaggerFile = require('./swagger_output.json')
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    'http://localhost:3002',
+    'http://localhost:3001',
 
+
+  ];
+
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  // Add other CORS headers if needed (e.g., for handling credentials)
+  next();
+});
 
 require('dotenv').config();
 
@@ -18,7 +34,7 @@ app.use(express.json({ extended: false }))
 
 app.use('/items', itemRoutes)
 
-app.use('/inventory', inventoryRoutes)
+app.use('/inventories', inventoryRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
