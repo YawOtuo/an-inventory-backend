@@ -71,6 +71,7 @@ exports.updateInventory = (req, res) => {
 
 
 exports.deleteInventory = (req, res) => {
+
     const id = req.params.id; // Extract the item ID from the request parameters
 
     inventory.findByPk(id) // Assuming 'item' is your Sequelize model

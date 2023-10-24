@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors'); // Import the 'cors' package
 const models = require('./models')
 const itemRoutes = require('./item/item.routes');
 const inventoryRoutes = require('./inventory/routes');
@@ -8,6 +9,7 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
 
 
+app.use(cors());
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 app.use((req, res, next) => {

@@ -31,6 +31,7 @@ exports.getAllItems = (req, res) => {
 
 exports.addItem = (req, res) => {
     const data = req.body
+
     item.create(data)
         .then((response) => {
             res.status(201).json(response)
