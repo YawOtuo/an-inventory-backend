@@ -14,6 +14,7 @@ app.use((req, res, next) => {
   const allowedOrigins = [
     'http://localhost:3002',
     'http://localhost:3001',
+    "https://an-inventory.vercel.app"
 
 
   ];
