@@ -7,6 +7,9 @@ const router = express.Router()
 router.get('', getAllInventory)
 
 router.post('', addInventory)
+router.post('/sell', addInventory)
+router.post('/refill', addInventory)
+
 
 router.put('/:id', updateInventory)
 

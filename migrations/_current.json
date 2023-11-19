@@ -14,13 +14,13 @@
                     "field": "action",
                     "seqType": "Sequelize.STRING"
                 },
-                "price": {
-                    "field": "price",
-                    "seqType": "Sequelize.INTEGER"
-                },
                 "quantity": {
                     "field": "quantity",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "date": {
+                    "field": "date",
+                    "seqType": "Sequelize.DATE"
                 },
                 "createdAt": {
                     "allowNull": false,
@@ -56,22 +56,29 @@
                     "field": "id",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "type": {
-                    "field": "type",
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "category": {
+                    "field": "category",
                     "seqType": "Sequelize.STRING"
                 },
                 "quantity": {
                     "field": "quantity",
                     "seqType": "Sequelize.STRING"
                 },
+                "unit_price": {
+                    "field": "unit_price",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "refill_count": {
+                    "field": "refill_count",
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "description": {
                     "field": "description",
                     "seqType": "Sequelize.STRING"
-                },
-                "variants": {
-                    "allowNull": true,
-                    "field": "variants",
-                    "seqType": "Sequelize.JSON"
                 },
                 "createdAt": {
                     "allowNull": false,
@@ -90,5 +97,5 @@
     "path": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current.json",
     "backupPath": "/home/stez/Desktop/sterl/an-inventory-backend/migrations/_current_bak.json",
     "exists": true,
-    "revision": 5
+    "revision": 6
 }

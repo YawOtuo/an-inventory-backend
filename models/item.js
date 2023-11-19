@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // define association here 
     }
   }
   Item.init({
-    type: DataTypes.STRING,
+    name: DataTypes.STRING,
+    category: DataTypes.STRING,
     quantity: DataTypes.STRING,
+    unit_price: DataTypes.INTEGER,
+    refill_count: DataTypes.INTEGER,
     description: DataTypes.STRING,
-    variants: {
-      type: DataTypes.JSON, // Define the "variants" attribute as JSON
-      allowNull: true, // Set to true if variants can be null, otherwise false
-    },
+
 
 
   },

@@ -116,7 +116,7 @@ exports.searchItem = (req, res) => {
     item.findAll({
         where: {
             [Op.or]: [
-                { type: { [Op.like]: `%${keyword}%` } }, // Use [Op.like] for case-insensitive search
+                { name: { [Op.like]: `%${keyword}%` } }, // Use [Op.like] for case-insensitive search
                 { description: { [Op.like]: `%${keyword}%` } }, // Use [Op.like] for case-insensitive search
             ],
         },

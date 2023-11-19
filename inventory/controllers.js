@@ -8,7 +8,6 @@ const inventory = db.Inventory;
 
 
 function paginate(data, page, perPage) {
-    // Simulated data (replace with actual data source)
     const allData = data
     const startIndex = (page - 1) * perPage;
     const endIndex = startIndex + perPage;
@@ -20,13 +19,18 @@ exports.getAllInventory = (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const perPage = parseInt(req.query.perPage) || 100;
 
-    inventory.findAll()
+    inventory.findAll({
+        include: [{
+            model: item,
+            attributes: ['id', 'name', 'quantity','category'], // Specify the attributes you want to retrieve from the Item model
+        }],
+    })
         .then((response) => {
             res.send(paginate(response, page, perPage));
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).send('Internal Server Error'); // Handle the error and send an appropriate response to the client
+            res.status(500).send('Internal Server Error');
         });
 };
 

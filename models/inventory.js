@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Inventory.init({
     action: DataTypes.STRING, // refill or sell
-    price: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
+    date: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Inventory',
