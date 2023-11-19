@@ -28,6 +28,18 @@ exports.getAllItems = (req, res) => {
         });
 };
 
+exports.getOneItem = (req, res) => {
+
+
+    item.findByPk(req.params.id)
+        .then((response) => {
+            res.send(response);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send('Internal Server Error'); // Handle the error and send an appropriate response to the client
+        });
+};
 
 exports.addItem = (req, res) => {
     const data = req.body
@@ -100,7 +112,7 @@ exports.deleteItem = (req, res) => {
 
 exports.searchItem = (req, res) => {
     const { keyword } = req.query; // Extract the search keyword from the query parameters
-
+    console.log(keyword)
     item.findAll({
         where: {
             [Op.or]: [
